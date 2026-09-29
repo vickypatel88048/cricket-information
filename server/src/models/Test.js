@@ -1,0 +1,3 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({title:{type:String,required:true},durationMinutes:{type:Number,default:30},questions:[{type:mongoose.Schema.Types.ObjectId,ref:'Question'}],status:{type:String,enum:['draft','scheduled','live','completed'],default:'draft'},scheduledAt:Date,createdBy:{type:mongoose.Schema.Types.ObjectId,ref:'User'}},{timestamps:true});
+export default mongoose.model('Test',schema);
